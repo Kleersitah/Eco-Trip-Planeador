@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Trip Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-bg">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent pt-4">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#"> Eco-Trip</a>
+               
+            </div>
+        </nav>
+
+        <main class="container mt-5 pt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5">
+                    <h1 class="display-3 fw-bold text-white mb-4">Planea tu ruta <br>sin emisiones</h1>
+                    <p class="lead text-light mb-4 opacity-75">Calcula la autonomía de tu bicicleta eléctrica y descubre si tu próximo destino verde es viable con una sola carga.</p>
+                    
+                    <div class="d-flex gap-3 mt-5">
+                        <div class="glass-card p-3 text-center rounded-4 w-100">
+                            <h4 class="text-white mb-0">Cero</h4>
+                            <small class="text-light opacity-75">Huella de Carbono</small>
+                        </div>
+                        <div class="glass-card p-3 text-center rounded-4 w-100">
+                            <h4 class="text-white mb-0">100%</h4>
+                            <small class="text-light opacity-75">Eco-Friendly</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="calculator-card p-5 rounded-5 shadow-lg">
+                        <div class="text-center mb-4">
+                            <h3 class="fw-bold text-dark">Tu Viaje</h3>
+                            <p class="text-muted small">Ingresa los datos de tu e-bike</p>
+                        </div>
+                        
+                        <form id="ecoForm">
+                            <div class="mb-3">
+                                <label class="form-label text-secondary small">Distancia a recorrer (km)</label>
+                                <input type="number" id="inputDistance" class="form-control form-control-lg bg-light border-0" required placeholder="Ej. 25">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-secondary small">Capacidad Batería (Wh)</label>
+                                <input type="number" id="inputCapacity" class="form-control form-control-lg bg-light border-0" required placeholder="Ej. 500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-secondary small">Eficiencia E-bike (Wh/km)</label>
+                                <input type="number" id="inputEfficiency" class="form-control form-control-lg bg-light border-0" required value="15" placeholder="Promedio: 15">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 btn-lg rounded-pill fw-bold">Calcular Ruta ↗</button>
+                        </form>
+
+                        <div id="resultsArea" class="mt-4 pt-4 border-top d-none">
+                            <h5 class="fw-bold mb-3 text-dark">Resultados del análisis:</h5>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Batería requerida:</span>
+                                <span class="fw-bold text-dark" id="resUsage">0 Wh</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Batería restante:</span>
+                                <span class="fw-bold text-dark" id="resRemaining">0 Wh</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-muted">Tiempo estimado (a 20km/h):</span>
+                                <span class="fw-bold text-dark" id="resTime">0 hrs</span>
+                            </div>
+                            <div id="resStatus" class="alert text-center fw-bold py-2 mb-0 rounded-pill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
