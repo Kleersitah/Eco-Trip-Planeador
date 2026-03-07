@@ -12,8 +12,7 @@
     <div class="main-bg">
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent pt-4">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#"> Eco-Trip</a>
-               
+                <a class="navbar-brand fw-bold text-success" href="#"> Eco-Trip</a>
             </div>
         </nav>
 
@@ -52,8 +51,12 @@
                                 <input type="number" id="inputCapacity" class="form-control form-control-lg bg-light border-0" required placeholder="Ej. 500">
                             </div>
                             <div class="mb-4">
-                                <label class="form-label small">Eficiencia E-bike (Wh/km)</label>
-                                <input type="number" id="inputEfficiency" class="form-control form-control-lg bg-light border-0" required value="15" placeholder="Promedio: 15">
+                                <label class="form-label small">Tipo de Terreno</label>
+                                <select id="inputTerreno" class="form-select form-select-lg bg-light border-0" required>
+                                    <option value="plano">Terreno Plano</option>
+                                    <option value="subida">Subida Moderada</option>
+                                    <option value="montana">Terreno Montañoso</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-dark w-100 btn-lg rounded-pill fw-bold">Calcular Ruta ↗</button>
                         </form>
@@ -72,7 +75,10 @@
                                 <span class="text-muted">Tiempo estimado (a 20km/h):</span>
                                 <span class="fw-bold text-dark" id="resTime">0 hrs</span>
                             </div>
+                            
                             <div id="resStatus" class="alert text-center fw-bold py-2 mb-0 rounded-pill"></div>
+                            
+                            <div id="resAlternativa" class="alert text-center small mt-3 mb-0 d-none rounded-3 border-warning" style="background-color: #fff3cd; color: #664d03;"></div>
                         </div>
                     </div>
                 </div>
@@ -82,6 +88,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
-
 </html>
